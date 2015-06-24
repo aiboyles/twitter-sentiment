@@ -1,12 +1,9 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-
-// may not need this
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-
 var routes = require('./routes');
 var users = require('./routes/users');
 var twitterSearch = require('./logic/twitterSearch');
@@ -25,14 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//routes
 app.get('/', routes.index);
-
-app.get('/ping', function(req, res) {
-  res.send("pong!", 200);
-});
-
-app.get('/about', routes.about);
-
 app.post('/search', routes.search);
 
 // catch 404 and forward to error handler
@@ -65,7 +56,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-
 
 module.exports = app;
