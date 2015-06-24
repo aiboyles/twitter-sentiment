@@ -1,0 +1,17 @@
+@media (min-width:900px)
+    {
+        .container{width:800px; align-content:center;}
+    }
+
+.sentiment-area {
+    font-size: 18px;
+}
+
+.error {
+  color: red;
+  display: none;
+}
+
+.table-inner {
+    background-color: none;
+}
